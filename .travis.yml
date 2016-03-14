@@ -47,15 +47,14 @@ script:
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm which couchdb'
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm test -x /usr/bin/couchdb'
 
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm which couch-config'
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm test -x /usr/bin/couch-config'
+
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm couchdb -V'
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /usr/bin/couchdb -V | grep -qF "Apache CouchDB $COUCHDB_VERSION"'
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /usr/bin/couch-config --couch-version | grep -qF "$COUCHDB_VERSION"'
 
   # Ensure CouchDB configurations have taken effect.
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /usr/bin/curl -XGET "127.0.0.1:5984/_config/couchdb/max_dbs_open"'
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /usr/bin/telnet 127.0.0.1 5984'
-
-  - 'sudo docker port "$(cat ${container_id})" 5984'
-  - 'sudo docker port "$(cat ${container_id})" 5985'
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /usr/bin/couchdb -c | grep -qF "settings.ini"'
 
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'

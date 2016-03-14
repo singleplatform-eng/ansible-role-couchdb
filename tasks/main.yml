@@ -24,4 +24,3 @@
 
 - name: Ensure couchdb is started and enabled to start at boot.
   service: name=couchdb state=started enabled=yes
-

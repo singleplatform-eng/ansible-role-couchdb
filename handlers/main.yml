@@ -1,0 +1,9 @@
+---
+- name: restart couchdb
+  service: name=couchdb state=restarted
+
+- name: stop couchdb
+  service: name=couchdb state=stopped
+
+- name: start couchdb
+  service: name=couchdb state=started

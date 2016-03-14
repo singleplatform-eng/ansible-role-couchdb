@@ -1,0 +1,20 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: personnage
+  description: CouchDB for Debian/Ubuntu.
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.2
+  platforms:
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags:
+    - development
+    - web
+    - nosql
+    - database

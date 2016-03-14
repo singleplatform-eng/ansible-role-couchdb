@@ -51,7 +51,7 @@ script:
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm /usr/bin/couchdb -V | grep -qF "Apache CouchDB $COUCHDB_VERSION"'
 
   # Ensure CouchDB configurations have taken effect.
-  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm curl -XGET 127.0.0.1:5984/_config/couchdb/max_dbs_open | grep 150
+  - sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm curl -XGET 127.0.0.1:5984/_config/couchdb/max_dbs_open | grep 100
 
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'

@@ -1,6 +1,4 @@
 ---
-# defaults file for ansible-role-couchdb
-
 couchdb_port: "5984"
 couchdb_bind_address: "127.0.0.1"
 couchdb_database_dir: "/var/lib/couchdb"

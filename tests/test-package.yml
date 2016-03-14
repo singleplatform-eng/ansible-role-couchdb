@@ -1,6 +1,4 @@
 ---
 - hosts: all
-  vars:
-    couchdb_max_dbs_open: 100
   roles:
     - role_under_test

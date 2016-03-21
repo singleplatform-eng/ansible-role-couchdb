@@ -1,8 +1,4 @@
 ---
-- name: Add couchdb stable repository from PPA.
-  apt_repository:
-    repo: 'ppa:couchdb/stable'
-
 - name: Update apt cache.
   apt: update_cache=yes cache_valid_time=86400
 

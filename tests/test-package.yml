@@ -1,4 +1,10 @@
 ---
 - hosts: all
+
+  pre_tasks:
+    - name: Add couchdb stable repository from PPA.
+      apt_repository: repo='ppa:couchdb/stable'
+      when: ansible_os_family == 'Debian'
+
   roles:
     - role_under_test

@@ -1,6 +1,6 @@
 # Ansible Role: CouchDB
 
-[![Build Status](https://travis-ci.org/personnage/ansible-role-couchdb.svg?branch=master)](https://travis-ci.org/personnage/ansible-role-couchdb)
+[![Build Status](https://travis-ci.org/singleplatform-eng/ansible-role-couchdb.svg?branch=master)](https://travis-ci.org/singleplatform-eng/ansible-role-couchdb)
 
 Installs CouchDB on Debian/Ubuntu servers.
 
@@ -39,3 +39,5 @@ MIT / BSD
 ## Author Information
 
 This role was created in 2016 by [The Personnage](https://github.com/personnage).
+
+It has been modified to support generic configuration options in the settings template.

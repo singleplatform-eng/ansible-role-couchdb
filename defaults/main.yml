@@ -9,7 +9,6 @@ couchdb_log_level: "info"
 couchdb_user: "couchdb"
 couchdb_group: "couchdb"
 couchdb_local_conf_path: "/etc/couchdb/local.d"
-couchdb_admin_user: "root"
 
 couchdb_couchdb_extra_settings: {}
 

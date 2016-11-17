@@ -1,11 +1,18 @@
 ---
-# Variable setup.
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
 
 # Setup/install tasks.
 - include: install.yml
 
+- name: Ensure couchdb view and database dirs exist
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ couchdb_user }}"
+    group: "{{ couchdb_group }}"
+    mode: 0750
+  with_items:
+  - "{{ couchdb_database_dir }}"
+  - "{{ couchdb_view_index_dir }}"
 - name: Copy couchdb configuration in place.
   template:
     src: settings.ini.j2

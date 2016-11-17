@@ -10,3 +10,9 @@ couchdb_user: "couchdb"
 couchdb_group: "couchdb"
 couchdb_local_conf_path: "/etc/couchdb/local.d"
 couchdb_admin_user: "root"
+
+couchdb_couchdb_extra_settings: {}
+
+couchdb_http_extra_settings: {}
+
+couchdb_extra_settings: {}

@@ -2,7 +2,7 @@
 
   - name: Update apt cache.
     apt: update_cache=yes cache_valid_time=86400
-    when: ansible_distribution == 'Debian'
+    when: ansible_os_family == 'Debian'
 
   - name: Ensure couchdb is installed.
     apt:
@@ -10,4 +10,4 @@
       state: installed
     with_items:
       - couchdb
-    when: ansible_distribution == 'Debian'
+    when: ansible_os_family == 'Debian'

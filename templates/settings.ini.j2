@@ -4,7 +4,7 @@ database_dir = {{ couchdb_database_dir }}
 view_index_dir = {{ couchdb_view_index_dir }}
 max_dbs_open = {{ couchdb_max_dbs_open }}
 
-{% for k,v in couchdb_couchdb_extra_settings.iteritems()|sort %}
+{% for k,v in couchdb_couchdb_extra_settings.items()|sort %}
 {{k}} = {{v}}
 {% endfor %}
 
@@ -12,14 +12,14 @@ max_dbs_open = {{ couchdb_max_dbs_open }}
 port = {{ couchdb_port }}
 bind_address = {{ couchdb_bind_address }}
 
-{% for k,v in couchdb_http_extra_settings.iteritems()|sort %}
+{% for k,v in couchdb_http_extra_settings.items()|sort %}
 {{k}} = {{v}}
 {% endfor %}
 
-{% for k,v in couchdb_extra_settings.iteritems()|sort %}
+{% for k,v in couchdb_extra_settings.items()|sort %}
 [{{k}}]
 {% if v is iterable and v is not string %}
-{% for setting,value in v.iteritems()|sort %}
+{% for setting,value in v.items()|sort %}
 {{setting}} = {{value}}
 {% endfor %}
 {% endif %}
